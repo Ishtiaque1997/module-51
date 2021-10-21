@@ -17,17 +17,20 @@ useEffect(()=>{
   return (
    // bootstrap demo
    <div className="App">
-   <Row xs={1} md={2} className="g-4">
+     
+   {
+     news.length===0?
+     <Spinner animation="border" />
+     :
+     <Row xs={1} md={3} className="g-4">
     {
       news.map(nw=><Article news={nw}></Article>)
     }
 </Row>
+
+}
     
   </div>
-  
-  
-  
-
   );
 }
 
